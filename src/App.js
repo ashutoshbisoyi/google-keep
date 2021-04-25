@@ -4,6 +4,7 @@ import NoteInput from './components/NoteInput';
 import NoteList from './components/NoteList';
 const App = () => {
   const [notes, setNotes] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     const storedNotes = localStorage.getItem('notes');
@@ -22,17 +23,15 @@ const App = () => {
     localStorage.setItem('notes', JSON.stringify(notes));
   }, [notes]);
 
-  const searchNote = (searchTerm) => {
-    // searchTerm !== '' &&
-    //   setNotes(notes.filter((value) => value.note.title.includes(searchTerm)));
-    //cant perform the change here. need to do it in the nav
+  const setSearch = (searchTerm) => {
+    setSearchTerm(searchTerm);
   };
 
   return (
     <div>
-      <Navbar />
+      <Navbar setSearch={setSearch} />
       <NoteInput addNote={addNote} />
-      <NoteList notes={notes} deleteNote={deleteNote} />
+      <NoteList notes={notes} deleteNote={deleteNote} searchTerm={searchTerm} />
     </div>
   );
 };

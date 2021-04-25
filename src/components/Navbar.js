@@ -10,11 +10,11 @@ import { ImSun } from 'react-icons/im';
 import { BiDotsVertical } from 'react-icons/bi';
 import logo from '../assets/logo.png';
 import { IconButton, Tooltip } from '@material-ui/core';
-const Navbar = ({ searchNote }) => {
-  const [searchTerm, setSearchTerm] = useState('');
+const Navbar = ({ setSearch }) => {
+  const [searchTerm, setSearchTerm] = useState('blank');
   const handleChange = (e) => {
     setSearchTerm(e.target.value);
-    searchNote(searchTerm);
+    setSearch(searchTerm);
   };
   return (
     <nav className='navbar'>
@@ -36,7 +36,7 @@ const Navbar = ({ searchNote }) => {
             <input
               type='text'
               name='search'
-              placeholder='Search'
+              placeholder='Search Title'
               onChange={(e) => handleChange(e)}
             />
           </div>
