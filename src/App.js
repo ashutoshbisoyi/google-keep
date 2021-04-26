@@ -5,6 +5,7 @@ import NoteList from './components/NoteList';
 const App = () => {
   const [notes, setNotes] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
 
   useEffect(() => {
     const storedNotes = localStorage.getItem('notes');
@@ -27,11 +28,29 @@ const App = () => {
     setSearchTerm(searchTerm);
   };
 
+  const changeTheme = () => {
+    setIsDarkTheme(!isDarkTheme);
+  };
+
+  const clearAllNotes = () => {
+    setNotes([]);
+  };
+
   return (
-    <div>
-      <Navbar setSearch={setSearch} />
-      <NoteInput addNote={addNote} />
-      <NoteList notes={notes} deleteNote={deleteNote} searchTerm={searchTerm} />
+    <div className={isDarkTheme ? 'app dark' : 'app'}>
+      <Navbar
+        setSearch={setSearch}
+        clearAll={clearAllNotes}
+        darkTheme={isDarkTheme}
+        changeTheme={changeTheme}
+      />
+      <NoteInput addNote={addNote} darkTheme={isDarkTheme} />
+      <NoteList
+        notes={notes}
+        deleteNote={deleteNote}
+        searchTerm={searchTerm}
+        darkTheme={isDarkTheme}
+      />
     </div>
   );
 };

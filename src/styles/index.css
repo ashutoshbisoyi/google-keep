@@ -13,6 +13,12 @@ button {
   background-color: transparent;
   cursor: pointer;
 }
+.app {
+  min-height: 100vh;
+}
+.app.dark {
+  background-color: #202124;
+}
 .navbar {
   width: 100%;
   padding: 0.5em;
@@ -21,14 +27,20 @@ button {
   align-items: center;
   border-bottom: 1px solid rgb(110, 110, 110);
 }
+.navbar.dark {
+  background-color: #202124;
+  border-bottom: 1px solid #ececec;
+}
 .navbar .nav-group {
   display: flex;
   align-items: center;
 }
 .navbar .icon {
   color: #777777;
-  /* margin: 0 1em; */
   font-size: larger;
+}
+.navbar.dark .icon {
+  color: #ececec;
 }
 .navbar .navbar-brand {
   display: flex;
@@ -42,6 +54,10 @@ button {
   color: #777777;
   font-weight: 400;
 }
+.navbar.dark .navbar-brand h1 {
+  color: #ececec;
+  font-weight: 400;
+}
 .navbar .search-div {
   padding: 1em;
   width: 600px;
@@ -50,9 +66,18 @@ button {
   font-size: 0.8em;
   display: flex;
 }
+.navbar.dark .search-div {
+  background-color: #525355;
+}
+.navbar.dark .search-div input::placeholder {
+  color: #ececec;
+}
 .navbar .search-div .icon {
   font-size: 25px;
   margin: 0;
+}
+.navbar.dark .search-div .icon {
+  color: #ececec;
 }
 .navbar .search-div input {
   width: 100%;
@@ -60,6 +85,7 @@ button {
   background: transparent;
   padding-left: 0.5em;
   color: #777777;
+  cursor: pointer;
 }
 .navbar .search-div input:focus {
   outline: none;
@@ -77,6 +103,10 @@ button {
   box-shadow: 7px 7px 25px #e0e0e0, -7px -7px 25px #ffffff;
   padding: 0.2em 0.5em;
 }
+.input-section.dark .input-container {
+  box-shadow: 7px 7px 25px #1b1c1f, -7px -7px 25px #252629;
+  border: 1px solid #525355;
+}
 .input-section .input-container input,
 .input-section .input-container textarea {
   width: 100%;
@@ -87,11 +117,10 @@ button {
   color: #777777;
   resize: none;
 }
-
-.input-section .input-container input {
-  color: #3a3a3a;
-  font-weight: 500;
-  font-size: 1.1em;
+.input-section.dark .input-container input,
+.input-section.dark .input-container textarea {
+  background-color: #202124;
+  color: #ececec;
 }
 .input-section .input-container input:focus,
 .input-section .input-container textarea:focus {
@@ -100,10 +129,13 @@ button {
 .input-section .input-container button {
   border: 0;
   background: transparent;
-  color: #505050;
+  color: #202124;
   cursor: pointer;
   display: block;
   margin: 0 0.2em 0.2em auto;
+}
+.input-section.dark .input-container button {
+  color: #ececec;
 }
 .input-section .input-container button:focus {
   outline: none;
@@ -141,10 +173,17 @@ button {
   white-space: pre-wrap;
   height: fit-content;
 }
+.note-container.dark .card {
+  background: #202124;
+  border: 1px solid #525355;
+}
 .note-container .card textarea {
   width: 100%;
   resize: none;
   border: none;
+}
+.note-container.dark .card textarea {
+  background-color: #202124;
 }
 .note-container .card textarea:focus {
   outline: none;
@@ -155,8 +194,14 @@ button {
   margin-bottom: 0.5em;
   color: #3a3a3a;
 }
+.note-container.dark .card textarea.title {
+  color: #ececec;
+}
 .note-container .card textarea.body {
   color: #777777;
+}
+.note-container.dark .card textarea.body {
+  color: #b6b6b6;
 }
 .note-container .card .options {
   width: 100%;
@@ -169,6 +214,9 @@ button {
   padding: 0 1em;
   opacity: 0;
   transition: all 0.3s ease;
+}
+.note-container.dark .card .options .icon {
+  color: #e0e0e0;
 }
 .note-container .card:hover .options {
   opacity: 1;
@@ -199,7 +247,7 @@ button {
   .blank h4 {
     font-size: 1em;
   }
-  .note-container .card button.delete {
+  .note-container .card .options {
     opacity: 1;
   }
 }

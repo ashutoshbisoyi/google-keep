@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { MdDelete } from 'react-icons/md';
 import { AiFillSave } from 'react-icons/ai';
 import bulb from '../assets/bulb.svg';
-const NoteList = ({ notes, deleteNote, searchTerm }) => {
+const NoteList = ({ notes, deleteNote, searchTerm, darkTheme }) => {
   const [noteTitle, setNoteTitle] = useState('');
   const [noteBody, setNoteBody] = useState('');
 
@@ -33,7 +33,7 @@ const NoteList = ({ notes, deleteNote, searchTerm }) => {
   return (
     <>
       {notes.length !== 0 ? (
-        <div className='note-container'>
+        <div className={darkTheme ? 'note-container dark' : 'note-container'}>
           {notes
             .filter((value) => {
               if (searchTerm === '' || searchTerm.length < 2) {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { v4 } from 'uuid';
 import { ClickAwayListener, TextareaAutosize } from '@material-ui/core';
-const NoteInput = ({ addNote }) => {
+const NoteInput = ({ addNote, darkTheme }) => {
   const [isTitle, setIsTitle] = useState(false);
   const [note, setNote] = useState({
     title: '',
@@ -38,7 +38,7 @@ const NoteInput = ({ addNote }) => {
   };
 
   return (
-    <section className='input-section'>
+    <section className={darkTheme ? 'input-section dark' : 'input-section'}>
       <ClickAwayListener onClickAway={add}>
         <form onSubmit={add} className='input-container'>
           {isTitle && (
