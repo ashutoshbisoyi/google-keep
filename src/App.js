@@ -10,6 +10,8 @@ const App = () => {
   useEffect(() => {
     const storedNotes = localStorage.getItem('notes');
     storedNotes && setNotes(JSON.parse(storedNotes));
+    const darkTheme = localStorage.getItem('darkTheme');
+    darkTheme === 'true' && setIsDarkTheme(true);
   }, []);
 
   const addNote = async (newNote) => {
@@ -30,6 +32,8 @@ const App = () => {
 
   const changeTheme = () => {
     setIsDarkTheme(!isDarkTheme);
+    localStorage.setItem('darkTheme', !isDarkTheme);
+    console.log('change theme function', !isDarkTheme);
   };
 
   const clearAllNotes = () => {
