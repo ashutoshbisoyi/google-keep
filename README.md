@@ -16,7 +16,7 @@ This project is live at [https://googlekeep-app.herokuapp.com/](https://googleke
 ## Project Snapshots
 
 <img src="https://drive.google.com/uc?export=view&id=1GrsdMZ4YJxYkc5UlqIKEiSdIDWzqpS9t" alt="project snap" width="400"/>
-<img src="https://drive.google.com/uc?export=view&id=17ZveeCtQUBoGQpC35YiQVBZMsPdR4-R_" alt="project snap" width="400"/>
+<img src="https://drive.google.com/uc?export=view&id=1MxUSmlFwG9BdHJTfrHQPnVIA6uO1aoDb" alt="project snap" width="400"/>
 <img src="https://drive.google.com/uc?export=view&id=1MxUSmlFwG9BdHJTfrHQPnVIA6uO1aoDb" alt="project snap" width="400"/>
 <img src="https://drive.google.com/uc?export=view&id=1bGA6O0x0KYO6Nim0WgKbyGXwQc6yoMv2" alt="project snap" width="400"/>
 
